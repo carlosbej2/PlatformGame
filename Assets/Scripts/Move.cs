@@ -31,6 +31,19 @@ Rigidbody rb;
         if (Input.GetButtonDown("Jump") && IsGrounded()){ 
             rb.velocity = new Vector3(rb.velocity.x, jumpValue, rb.velocity.z);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded()){
+            movementSpeed = 12f;
+            rb.velocity = new Vector3(HorizontalInput * movementSpeed, rb.velocity.y, VerticalInput * movementSpeed);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift) && IsGrounded()){
+            movementSpeed = 7f;
+            rb.velocity = new Vector3(HorizontalInput * movementSpeed, rb.velocity.y, VerticalInput * movementSpeed);
+        }
+
+        
+
             
             //audiosource.Play();
 
