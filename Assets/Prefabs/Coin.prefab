@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9062934827734529041}
   - component: {fileID: 9062934827734529040}
   - component: {fileID: 9062934827734529043}
+  - component: {fileID: 1131342006780985701}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: CoinCollectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9062934827734529042}
   m_LocalRotation: {x: -0, y: 0.03861809, z: -0, w: 0.99925405}
   m_LocalPosition: {x: 0.23741071, y: 5.0672746, z: 28.424492}
-  m_LocalScale: {x: 0.23036468, y: -0.89873993, z: 1}
+  m_LocalScale: {x: 0.15, y: -1.12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,8 +91,23 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9062934827734529042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1131342006780985701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062934827734529042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3b0ba68164576438feaa9945a5b302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Xspeed: 0
+  Yspeed: 0
+  Zspeed: 1
