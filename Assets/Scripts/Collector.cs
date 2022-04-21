@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class Collector : MonoBehaviour
 {
-    public int coinsCollected = 0;
+     int coinsCollected = 0;
    
-
     [SerializeField] Text coinsCollectedText;
+    [SerializeField] AudioSource coinCollectedS;
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("CoinCollectable")){
             Destroy(other.gameObject);
+            coinCollectedS.Play();
             coinsCollected++;
             coinsCollectedText.text = "Coins collected: " + coinsCollected;
             

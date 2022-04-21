@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Enemy Head
   - CoinCollectable
+  - Terrain
+  - Heart
   layers:
   - Default
   - TransparentFX
