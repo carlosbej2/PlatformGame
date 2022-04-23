@@ -39,9 +39,6 @@ public class LifeManager : MonoBehaviour
 //tambien se reinician las vidas... en vez de reiniciar el nivel, lo que deberiamos hacer
 //seria que hiciera respawn en un sitio. esto es facil pero son 2am y estoy exhausto, 
 //mañana lo gestionamos
-
-//https://scholarslab.lib.virginia.edu/blog/teleporting-in-Unity3D/
-
      public void TakeDamage(int d){
         if (number_of_lifes == 3){
             Destroy(hearts[0].gameObject);

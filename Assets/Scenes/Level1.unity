@@ -1636,36 +1636,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9062934827734529046, guid: 0025b6c8c21c52e4885ecf5f080a86f9, type: 3}
   m_PrefabInstance: {fileID: 1836859560}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1069864497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1069864498}
-  m_Layer: 0
-  m_Name: Respawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1069864498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069864497}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: -8.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078339371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,9 +2907,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 0}
   hearts: []
-  target: {fileID: 0}
-  SpawnPoint: {fileID: 0}
-  player: {fileID: 0}
   ExplodedS: {fileID: 0}
   number_of_lifes: 3
 --- !u!114 &1976135865
@@ -3668,13 +3635,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 699027293}
     - target: {fileID: 6958947478633405768, guid: 3073386b3c36f804ebe18ab79e71b7ba, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 699027284}
-    - target: {fileID: 6958947478633405768, guid: 3073386b3c36f804ebe18ab79e71b7ba, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1069864498}
+      objectReference: {fileID: 699027284}
     - target: {fileID: 6958947478633405768, guid: 3073386b3c36f804ebe18ab79e71b7ba, type: 3}
       propertyPath: fallingS
       value: 
@@ -3683,10 +3646,6 @@ PrefabInstance:
       propertyPath: ExplodedS
       value: 
       objectReference: {fileID: 699027295}
-    - target: {fileID: 6958947478633405768, guid: 3073386b3c36f804ebe18ab79e71b7ba, type: 3}
-      propertyPath: SpawnPoint
-      value: 
-      objectReference: {fileID: 1069864498}
     - target: {fileID: 6958947478633405768, guid: 3073386b3c36f804ebe18ab79e71b7ba, type: 3}
       propertyPath: number_of_lifes
       value: 3

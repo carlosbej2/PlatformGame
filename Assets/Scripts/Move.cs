@@ -105,11 +105,7 @@ Rigidbody rb;
     }
     */
 
-    /*private void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.tag == "Enemy"){
-            print("Collision");
-        } 
-    } */
+  
 
     //https://answers.unity.com/questions/930557/rotate-an-object-90-degrees-on-a-button-press.html
 }
