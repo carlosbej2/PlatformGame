@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Thx 4 Playing.unity
     guid: 08d753e4370a3c94a97a4a0b83088725
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8aabba92deb2fe64a84992c4c542f6e7
   m_configObjects: {}

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class LifeManager : MonoBehaviour
 {
     public GameObject explosion;
+    public Vector3 startPosition;
     public GameObject[] hearts;
+    bool is_dead = false;
 
     [SerializeField] AudioSource ExplodedS;
     public int number_of_lifes = 2;
@@ -30,36 +32,49 @@ public class LifeManager : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Move>().enabled = false;
+        is_dead = true;
+        TakeDamage(1);
         Invoke(nameof(ReloadLvl), 2f);
 
         
     }
 
-//falta terminarlo, el problema de esto es que en el momento en el Update() se reinicia el nivel,
-//tambien se reinician las vidas... en vez de reiniciar el nivel, lo que deberiamos hacer
-//seria que hiciera respawn en un sitio. esto es facil pero son 2am y estoy exhausto, 
-//mañana lo gestionamos
+
      public void TakeDamage(int d){
-        if (number_of_lifes == 3){
+        if (number_of_lifes == 3 && is_dead){
             Destroy(hearts[0].gameObject);
             number_of_lifes--;
-        }else if(number_of_lifes == 2){
+            is_dead = false;
+        }else if(number_of_lifes == 2 && is_dead){
             Destroy(hearts[2].gameObject);
             number_of_lifes--;
-        }else if(number_of_lifes == 1){
+            is_dead = false;
+        }else if(number_of_lifes == 1 && is_dead){
             Destroy(hearts[1].gameObject);
-            Debug.Log("DEAD");
-        }
+            number_of_lifes--;
+            is_dead = false;
+        } else if(number_of_lifes == 0 && is_dead){
+            DeadEnd();
+    }
+     }
+       //Vector3(0,1.25,-8.75)
+    void ReloadLvl(){
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Move>().enabled = true;
+        TakeDamage(1);
+        transform.position = startPosition;
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void ReloadLvl(){
+    void Awake(){
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        startPosition = transform.position;
     }
 
     void DeadEnd(){
 // de momento te saca al menu principal
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 
     public void Update(){
@@ -68,6 +83,7 @@ public class LifeManager : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Move>().enabled = false;
             Invoke(nameof(ReloadLvl), 1f);
+            is_dead = true;
         }
   
     }

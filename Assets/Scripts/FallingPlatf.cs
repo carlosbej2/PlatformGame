@@ -6,13 +6,32 @@ public class FallingPlatf : MonoBehaviour
 {
 
     bool alreadyFalling = false;
+    [SerializeField] private float tiempoReaparecer;
     float downwardsForce = 0;
+    private Vector3 startPosition;
 
     void OnTriggerEnter(Collider collider){
         if (collider.gameObject.name == "Player"){
             alreadyFalling = true;
             //Destroy(gameObject, 10);
+            Invoke("SpawnPlatform", tiempoReaparecer);
+
+            
         }
+    }
+
+    void Start(){
+
+    startPosition = transform.position;
+
+    }
+
+    private void SpawnPlatform(){
+
+alreadyFalling = false;
+transform.position = startPosition;
+downwardsForce = 0;
+
     }
 
     // Update is called once per frame
