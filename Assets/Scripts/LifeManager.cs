@@ -11,7 +11,7 @@ public class LifeManager : MonoBehaviour
     bool is_dead = false;
 
     [SerializeField] AudioSource ExplodedS;
-    public int number_of_lifes = 2;
+    public int number_of_lifes = 3;
 
     private void Start(){
 
@@ -57,8 +57,8 @@ public class LifeManager : MonoBehaviour
             DeadEnd();
     }
      }
-       //Vector3(0,1.25,-8.75)
-    void ReloadLvl(){
+
+    public void ReloadLvl(){
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Move>().enabled = true;
